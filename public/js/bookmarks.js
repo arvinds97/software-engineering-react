@@ -11,6 +11,7 @@ function Bookmarks () {
    <div class="ttr-bookmarks">
     <div class="ttr-left-column">
      ${navigation}
+     
     </div>
     <div class="ttr-center-column">
      ${tuits}
