@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://cs5500-node-project-arvinds97.herokuapp.com/";
+const BASE_URL = "https://cs5500-node-project-arvinds97.herokuapp.com";
 // const BASE_URL = "https://software-engineering-node-fa22.herokuapp.com/api";
 // const BASE_URL = "http://localhost:4000/api";
 
