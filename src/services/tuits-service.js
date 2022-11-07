@@ -26,3 +26,7 @@ export const updateTuit = (tid, tuit) =>
 export const deleteTuit = (tid) =>
   axios.delete(`${TUITS_API}/${tid}`)
     .then(response => response.data);
+
+export const deleteTuitsByUid = (uid) =>
+    axios.delete(`${TUITS_API}/${uid}`)
+        .then(response => response.data)
