@@ -40,7 +40,9 @@ test('tuit list renders mocked', async () => {
 
     render(
         <HashRouter>
-            <Tuit tuits={tuits}/>
+            <Tuit tuit={tuits[0]}/>
+            <Tuit tuit={tuits[1]}/>
+            <Tuit tuit={tuits[2]}/>
         </HashRouter>
     );
 
