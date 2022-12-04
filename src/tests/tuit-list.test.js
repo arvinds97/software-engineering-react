@@ -3,6 +3,7 @@ import {HashRouter} from "react-router-dom";
 import Tuit from "../components/tuits/tuit";
 import {createUser} from "../services/users-service";
 import {createTuit} from "../services/tuits-service";
+import Tuits from "../components/tuits";
 
 
 
@@ -17,25 +18,26 @@ const MOCKED_TUITS = [
         tuit: "alice's tuit",
         postedBy: MOCKED_USERS[0],
         postedOn: "2022-11-15T00:00:00.000Z",
+        stats: {likes: 1, dislikes: 0, retuits: 0, replies: 0}
     },
     {
         tuit: "bob's tuit",
         postedBy: MOCKED_USERS[1],
         postedOn: "2022-11-15T00:00:00.000Z",
+        stats: {likes: 1, dislikes: 1, retuits: 0, replies: 0}
     }
     ,{
         tuit: "charlie's tuit",
         postedBy: MOCKED_USERS[2],
         postedOn: "2022-11-15T00:00:00.000Z",
+        stats: {likes: 1, dislikes: 0, retuits: 0, replies: 0}
     }
 ];
 
 test('tuit list renders static tuit array', () => {
   render(
       <HashRouter>
-        <Tuit tuit={MOCKED_TUITS[0]}/>
-          <Tuit tuit={MOCKED_TUITS[1]}/>
-          <Tuit tuit={MOCKED_TUITS[2]}/>
+        <Tuits tuit={MOCKED_TUITS}/>
       </HashRouter>);
   const linkElement = screen.getByText(/alice's tuit/i);
   expect(linkElement).toBeInTheDocument();
