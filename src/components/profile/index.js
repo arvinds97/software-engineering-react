@@ -24,8 +24,16 @@ const Profile = () => {
             <h6>@{profile.username}</h6>
             <button onClick={logout}>
                 Logout</button>
-            <MyTuits/>
-            <MyLikes/>
+            <div className={"row"}>
+                <div className={"col"}>
+                    <MyTuits/>
+                </div>
+            </div>
+            <div className={"row"}>
+                <div className={"col"}>
+                    <MyLikes/>
+                </div>
+            </div>
         </div>
     );
 };
