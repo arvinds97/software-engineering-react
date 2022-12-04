@@ -9,6 +9,8 @@ const Tuits = ({tuits = [], deleteTuit,
             .then(refreshTuits)
             .catch(e => alert(e))
 
+    console.log("Within tuits component", tuits);
+
     return (
         <div>
             <ul>
