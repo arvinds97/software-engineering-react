@@ -1,8 +1,9 @@
 import * as service from "../../services/auth-service"
-import {Route, Routes, useNavigate} from "react-router-dom";
+import {Link, Route, Routes, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
-import MyTuits from "../tuits/my-tuits";
+import MyTuits from "./my-tuits";
 import MyLikes from "./my-likes";
+import MyDislikes from "./my-dislikes";
 const Profile = () => {
     const navigate = useNavigate();
     const [profile, setProfile] = useState({});
@@ -24,7 +25,7 @@ const Profile = () => {
             <h6>@{profile.username}</h6>
             <button onClick={logout}>
                 Logout</button>
-            <div className={"row"}>
+            {/*<div className={"row"}>
                 <div className={"col"}>
                     <MyTuits/>
                 </div>
@@ -33,7 +34,29 @@ const Profile = () => {
                 <div className={"col"}>
                     <MyLikes/>
                 </div>
-            </div>
+            </div>*/}
+            <ul>
+                <li>
+                    <Link to="/profile/mytuits">
+                        My Tuits</Link>
+                </li>
+                <li>
+                    <Link to="/profile/mylikes">
+                        My Liked Tuits</Link>
+                </li>
+                <li>
+                    <Link to="/profile/mydislikes">
+                        My Disliked Tuits</Link>
+                </li>
+            </ul>
+            <Routes>
+                <Route path="/mytuits"
+                       element={<MyTuits/>}/>
+                <Route path="/mylikes"
+                       element={<MyLikes/>}/>
+                <Route path="/mydislikes"
+                       element={<MyDislikes/>}/>
+            </Routes>
         </div>
     );
 };
