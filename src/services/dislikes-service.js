@@ -7,11 +7,10 @@ const api = axios.create({
     withCredentials: true
 });
 
-export const userTogglesTuitDisLikes = (uid, tid) =>
-    api.put(`${USERS_API}/${uid}/likes/${tid}`)
+export const userTogglesTuitDislikes = (uid, tid) =>
+    api.put(`${USERS_API}/${uid}/dislikes/${tid}`)
         .then(response => response.data);
 
-export const findAllTuitsLikedByUser = (userId) => {
-    api.get(`${USERS_API}/${userId}/likes`)
+export const findAllTuitsDislikedByUser = (userId) =>
+    api.get(`${USERS_API}/${userId}/dislikes`)
         .then(response => response.data);
-}
