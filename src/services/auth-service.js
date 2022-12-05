@@ -11,17 +11,17 @@ export const signup = (user) => {
     console.log("Inside signup");
     api.post(
         `${AUTH_API}/signup`, user
-    ).then(response => response.data);
+    ).then(response => response.data).catch(e => e);
 }
 
 export const login = (credentials) =>
     api.post(`${AUTH_API}/login`, credentials)
-        .then(response => response.data);
+        .then(response => response.data).catch(e => e);
 
 export const profile = () =>
     api.post(`${AUTH_API}/profile`)
-        .then(response => response.data);
+        .then(response => response.data).catch(e => e);
 
 export const logout = (user) =>
     api.post(`${AUTH_API}/logout`, user)
-        .then(response => response.data);
+        .then(response => response.data).catch(e => e);

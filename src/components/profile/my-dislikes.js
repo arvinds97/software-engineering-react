@@ -3,10 +3,13 @@ import * as service from "../../services/dislikes-service";
 import {useEffect, useState} from "react";
 
 const MyDislikes = () => {
-    const [dislikedTuits, setDislikedTuiTs] = useState([]);
-    const findTuitsIDislike = () =>
+    const [dislikedTuits, setDislikedTuits] = useState([]);
+    const findTuitsIDislike = () => {
         service.findAllTuitsDislikedByUser("me")
-            .then((tuits) => setDislikedTuiTs(tuits));
+            .then((tuits) => {
+                setDislikedTuits(tuits.map(i => i.tuit));
+            });
+    }
     useEffect(findTuitsIDislike, []);
 
     return(

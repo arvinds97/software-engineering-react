@@ -4,17 +4,17 @@ import * as dislikesService from "../../services/dislikes-service";
 import {useEffect, useState} from "react";
 const Tuits = ({tuits = [], deleteTuit,
                    refreshTuits}) => {
-
+    console.log("Tuits===: ", tuits);
     const likeTuit = (tuit) =>
         likesService
             .userTogglesTuitLikes("me", tuit._id)
-            .then(refreshTuits(tuits))
+            .then(refreshTuits)
             .catch(e => alert(e))
 
     const dislikeTuit = (tuit) =>
         dislikesService
             .userTogglesTuitDislikes("me", tuit._id)
-            .then(refreshTuits(tuits))
+            .then(refreshTuits)
             .catch(e => alert(e))
     return (
         <div>
